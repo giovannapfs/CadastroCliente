@@ -18,9 +18,15 @@ async function selectUsuario(){
 
 
 async function insertUsuario(usuario){
-    const conn = await connection();
+    const conn = await connect();
     const sql = 'INSERT INTO usuario(nome,senha) VALUES (?,?);';
     return await conn.query(sql, values);
 }
 
-module.exports = {selectUsuario, insertUsuario}
+async function deleteUsuario(id){
+    const conn = await connect();
+    const sql = 'DELETE FROM usuario where id=?;';
+    return await conn.query(sql, [id]);
+}
+
+module.exports = {selectUsuario, insertUsuario, deleteUsuario}
