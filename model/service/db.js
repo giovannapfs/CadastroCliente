@@ -16,7 +16,6 @@ async function selectUsuario(){
     return rows;
 }
 
-module.exports = {selectUsuario}
 
 async function insertUsuario(usuario){
     const conn = await connection();
