@@ -17,3 +17,11 @@ async function selectUsuario(){
 }
 
 module.exports = {selectUsuario}
+
+async function insertUsuario(usuario){
+    const conn = await connection();
+    const sql = 'INSERT INTO usuario(nome,senha) VALUES (?,?);';
+    return await conn.query(sql, values);
+}
+
+module.exports = {selectUsuario, insertUsuario}
