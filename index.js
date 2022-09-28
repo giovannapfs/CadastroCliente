@@ -17,7 +17,9 @@ console.log("SELECT * FROM t_usuario");
 const usuarios = await db.selectUsuario({nome: "Zé", senha: "12345678"});
 console.log(usuarios);
 
-
+console.log("DELETE * FROM t_usuario");
+const result3 = await db.deleteUsuario(2);
+console.log(result3);
 
 //Esse app.listen deve ser a ultima linha sempre (Isso é apenas uma boa prática, não é necessariamente obrigatório)
 app.listen(8081, () =>{
