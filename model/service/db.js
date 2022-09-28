@@ -29,4 +29,11 @@ async function deleteUsuario(id){
     return await conn.query(sql, [id]);
 }
 
-module.exports = {selectUsuario, insertUsuario, deleteUsuario}
+async function updateUsuario(id, usuario){
+    const conn = await connect();
+    const sql = 'UPDATE usuario SET nome=?, senha=? WHERE id=?';
+    const values = [usuario.nome, usuario.senha, id];
+    return await conn.query(sql, values);
+}
+
+module.exports = {selectUsuario, insertUsuario, deleteUsuario, updateUsuario}

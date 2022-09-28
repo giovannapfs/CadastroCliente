@@ -21,6 +21,10 @@ console.log("DELETE * FROM t_usuario");
 const result3 = await db.deleteUsuario(2);
 console.log(result3);
 
+console.log("UPDATE USUARIO");
+const result2 = await db.updateUsuario(3, {nome: "Zé José", senha: "87654321"});
+console.log(result2);
+
 //Esse app.listen deve ser a ultima linha sempre (Isso é apenas uma boa prática, não é necessariamente obrigatório)
 app.listen(8081, () =>{
     console.log("Servidor funcionando na url http://localhost:8081");
